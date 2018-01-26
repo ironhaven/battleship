@@ -38,15 +38,31 @@ def print_board():
         row += 1
 ##Spawn single boat on board
 def spawn_boat():
-    x = randint(0,board_width)
-    y = randint(0,board_height)
+    x = randint(0,board_width-1)
+    y = randint(0,board_height-1)
 ##If the boat in not in the 'O'cean try again
     while board[x][y] != 'O':
         x = randint(0,board_width)
         y = randint(0,board_height)
     else:
         board[x][y] = 'B'
+##Shoot the ocean
+def offer_shoot():
+    x = int(input('X: '))
+    y = int(input('Y: '))
+    cell = board[x][y]
+    if cell == 'B':
+        print('Hit!')
+        board[x][y] = 'X'
+    else:
+        print('Miss!')
+        board[x][y] = 'X'
+
+
+
 board = create_board()
 print('Board Hight: '+str(len(board))+' Board Width: '+str(len(board[0])))
 spawn_boat()
+print_board()
+offer_shoot()
 print_board()
