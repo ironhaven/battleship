@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 ##This is a battleship game where you gotta sink that battleship!
 from random import randint
 
